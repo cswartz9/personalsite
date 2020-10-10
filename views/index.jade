@@ -23,49 +23,56 @@ html(lang='en')
               | Home
               span.sr-only (current)
           li.nav-item
-            a.nav-link(href='#') Link
+            a.nav-link(href='#') Projects
           li.nav-item
-            a.nav-link.disabled(href='#') Disabled
-          li.nav-item.dropdown
-            a#dropdown01.nav-link.dropdown-toggle(href='http://example.com' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false') Dropdown
-            .dropdown-menu(aria-labelledby='dropdown01')
-              a.dropdown-item(href='#') Action
-              a.dropdown-item(href='#') Another action
-              a.dropdown-item(href='#') Something else here
-        form.form-inline.my-2.my-lg-0
-          input.form-control.mr-sm-2(type='text' placeholder='Search' aria-label='Search')
-          button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search
+            a.nav-link(href='#') Contact
+          li.nav-item
+            a.nav-link(href='#') Resume
     main(role='main')
-      // Main jumbotron for a primary marketing message or call to action
-      .jumbotron
+      .jumbotron(style="background-color:#dae0f1")
         .container
-          h1.display-3 Hello, world!
+          h1.display-3 Cole #[b Swartz]
           p
-            | This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.
+            | Hello! I'm a motivated student from the Ohio State University, graduating in the spring of 2021 with a B.S. in Computer Science & Engineering and minor in Business. Programming has been a passion of mine ever since I was a kid, and it's extraordinary to me that I have the opportunity to turn that passion into my life's work. There's something remarkable about being able to transform code on a computer into something tangible that can be seen by the world.
           p
-            a.btn.btn-primary.btn-lg(href='#' role='button') Learn more »
+            | Right now I'm hunting for a rewarding new-graduate role in software engineering or development.
       .container
-        // Example row of columns
         .row
           .col-md-4
-            h2 Heading
+            h2 Projects
             p
-              | Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+              | WIP! Expect this page to grow as I'm able to add more finished projects to my portfolio.
             p
-              a.btn.btn-secondary(href='#' role='button') View details »
+              | Alternatively, view #[a(href="https://github.com/cswartz9") my Github].
           .col-md-4
-            h2 Heading
+            h2 Contact
             p
-              | Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+              svg.bi.bi-envelope-fill(width='1em' height='1em' viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg')
+                path(fill-rule='evenodd' d='M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z')
+              #[a(href="mailto: cswartz9@gmail.com")  cswartz9@gmail.com]
             p
-              a.btn.btn-secondary(href='#' role='button') View details »
+              svg.bi.bi-link(width='1em' height='1em' viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg')
+                path(d='M6.354 5.5H4a3 3 0 0 0 0 6h3a3 3 0 0 0 2.83-4H9c-.086 0-.17.01-.25.031A2 2 0 0 1 7 10.5H4a2 2 0 1 1 0-4h1.535c.218-.376.495-.714.82-1z')
+                path(d='M9 5.5a3 3 0 0 0-2.83 4h1.098A2 2 0 0 1 9 6.5h3a2 2 0 1 1 0 4h-1.535a4.02 4.02 0 0 1-.82 1H12a3 3 0 1 0 0-6H9z')
+              #[a(href="https://www.linkedin.com/in/cole-swartz-753a481b6/")  LinkedIn]
+            p
+              | If you'd like to contact me directly, please click the link below.
           .col-md-4
-            h2 Heading
+            h2 Resume
             p
-              | Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+              | View my bona fides, skills, and prior work experience.
+        .row
+          .col-md-4
             p
-              a.btn.btn-secondary(href='#' role='button') View details »
+              a.btn.btn-secondary(href='#' role='button') View Projects »
+          .col-md-4
+            p
+              a.btn.btn-secondary(href='#' role='button') Contact Form »
+          .col-md-4
+            p
+              a.btn.btn-secondary(href='#' role='button') View Resume »
         hr
       // /container
     footer.container
-      p © Company 2017-2018
+      p Built using #[a(href="https://nodejs.org/en/") Node.js], #[a(href="https://expressjs.com/") Express], #[a(href="https://jade-lang.com/") Jade], and #[a(href="https://getbootstrap.com/") Bootstrap].
+      p © Cole Swartz 2020
