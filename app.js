@@ -10,7 +10,7 @@ var projectsRouter = require("./routes/projects");
 var resumeRouter = require("./routes/resume");
 
 var app = express();
-const port = 80;
+const port = 3000;
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
