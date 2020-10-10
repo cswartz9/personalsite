@@ -28,3 +28,51 @@ html(lang='en')
             a.nav-link(href='/contact') Contact
           li.nav-item
             a.nav-link(href='/resume') Resume
+
+    main(role='main')
+      section.jumbotron.text-center(style="background-color:#dae0f1")
+        .container
+          h1.jumbotron-heading Projects
+          p.lead.text-muted
+            | A curated list of projects I've worked on or completed in my personal, professional, and academic careers. This page, like many of my projects, is WIP; check back to see new entries!
+      .album.py-5
+        .container
+          .row
+            .col-md-4
+              .card.mb-4.box-shadow
+                .card-body
+                  h5.card-title
+                    | Personal Website
+                  p.card-text
+                    | Believe it or not, you're looking at it right now! Created to familiarize myself with a few new web frameworks and refresh my knowledge of the web development stack.
+                  .d-flex.justify-content-between.align-items-center
+                    .btn-group
+                      a.btn.btn-sm.btn-outline-secondary(href="./") View
+                      a.btn.btn-sm.btn-outline-secondary(href="https://github.com/cswartz9/personalsite") GitHub
+                    small.text-muted 9 mins
+            .col-md-4
+              .card.mb-4.box-shadow
+                img.card-img-top(data-src='holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail' alt='Card image cap')
+                .card-body
+                  p.card-text
+                    | This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+                  .d-flex.justify-content-between.align-items-center
+                    .btn-group
+                      button.btn.btn-sm.btn-outline-secondary(type='button') View
+                      button.btn.btn-sm.btn-outline-secondary(type='button') Edit
+                    small.text-muted 9 mins
+            .col-md-4
+              .card.mb-4.box-shadow
+                img.card-img-top(data-src='holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail' alt='Card image cap')
+                .card-body
+                  p.card-text
+                    | This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+                  .d-flex.justify-content-between.align-items-center
+                    .btn-group
+                      button.btn.btn-sm.btn-outline-secondary(type='button') View
+                      button.btn.btn-sm.btn-outline-secondary(type='button') Edit
+                    small.text-muted 9 mins
+          hr
+    footer.container
+      p Built using #[a(href="https://nodejs.org/en/") Node.js], #[a(href="https://expressjs.com/") Express], #[a(href="https://jade-lang.com/") Jade], and #[a(href="https://getbootstrap.com/") Bootstrap].
+      p © Cole Swartz 2020
