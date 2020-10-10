@@ -7,6 +7,23 @@ html(lang='en')
     // Bootstrap CSS
     link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css' integrity='sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO' crossorigin='anonymous')
     title Projects
+    style(type='text/css').
+      .carousel-control-prev-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+      }
+
+      .carousel-control-next-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+      }
+
+      .carousel-indicators li {
+        background-color: #999 !important;
+        background-color: rgba(70,70,70,.25) !important;
+      }
+
+      .carousel-indicators .active {
+        background-color: #444 !important;
+      }
   body
     script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js' integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo' crossorigin='anonymous')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js' integrity='sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49' crossorigin='anonymous')
@@ -32,47 +49,146 @@ html(lang='en')
     main(role='main')
       section.jumbotron.text-center(style="background-color:#dae0f1")
         .container
-          h1.jumbotron-heading Projects
+          h1.jumbotron-heading Project Portfolio
           p.lead.text-muted
-            | A curated list of projects I've worked on or completed in my personal, professional, and academic careers. This page, like many of my projects, is WIP; check back to see new entries!
-      .album.py-5
-        .container
-          .row
-            .col-md-4
-              .card.mb-4.box-shadow
-                .card-body
-                  h5.card-title
-                    | Personal Website
-                  p.card-text
-                    | Believe it or not, you're looking at it right now! Created to familiarize myself with a few new web frameworks and refresh my knowledge of the web development stack.
-                  .d-flex.justify-content-between.align-items-center
-                    .btn-group
-                      a.btn.btn-sm.btn-outline-secondary(href="./") View
-                      a.btn.btn-sm.btn-outline-secondary(href="https://github.com/cswartz9/personalsite") GitHub
-                    small.text-muted 9 mins
-            .col-md-4
-              .card.mb-4.box-shadow
-                img.card-img-top(data-src='holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail' alt='Card image cap')
-                .card-body
-                  p.card-text
-                    | This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                  .d-flex.justify-content-between.align-items-center
-                    .btn-group
-                      button.btn.btn-sm.btn-outline-secondary(type='button') View
-                      button.btn.btn-sm.btn-outline-secondary(type='button') Edit
-                    small.text-muted 9 mins
-            .col-md-4
-              .card.mb-4.box-shadow
-                img.card-img-top(data-src='holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail' alt='Card image cap')
-                .card-body
-                  p.card-text
-                    | This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                  .d-flex.justify-content-between.align-items-center
-                    .btn-group
-                      button.btn.btn-sm.btn-outline-secondary(type='button') View
-                      button.btn.btn-sm.btn-outline-secondary(type='button') Edit
-                    small.text-muted 9 mins
-          hr
+            | A curated list of projects I've worked on or completed in my personal, professional, and academic careers. Check back often to see new entries!
+      #projectsCarousel.carousel.slide(data-interval="false" data-ride="carousel")
+        .ol.carousel-indicators
+          li.active(data-target='#projectsCarousel' data-slide-to='0')
+          li(data-target='#projectsCarousel' data-slide-to='1')
+          li(data-target='#projectsCarousel' data-slide-to='2')
+        .carousel-inner
+          .carousel-item.active
+            .album.py-5
+              h3.text-center Personal Projects
+              hr
+              .container
+                .row
+                  .col-md-4
+                    .card.mb-4.box-shadow.h-100
+                      .card-body
+                        h5.card-title
+                          | Personal Website
+                        h6.card-subtitle.mb-2.text-muted
+                          | Node.js, Express, Jade, Bootstrap
+                        p.card-text
+                          | Believe it or not, you're looking at it right now! Created to familiarize myself with a few new web frameworks and refresh my knowledge of the web development stack.
+                        .d-flex.justify-content-between.align-items-center
+                          .btn-group
+                            a.btn.btn-sm.btn-outline-secondary(href="./") View
+                            a.btn.btn-sm.btn-outline-secondary(href="https://github.com/cswartz9/personalsite") GitHub
+                          small.text-muted October 2020
+                  .col-md-4
+                    .card.mb-4.box-shadow.h-100(style="opacity: 0.4")
+                      .card-body
+                        h5.card-title
+                          | WIP
+                        p.card-text
+                          | More personal projects to come!
+                        .d-flex.justify-content-between.align-items-center
+                          .btn-group
+                            a.btn.btn-sm.btn-outline-secondary(href="#") View
+                            a.btn.btn-sm.btn-outline-secondary(href="#") GitHub
+                          small.text-muted Coming Soon!
+                  .col-md-4
+                    .card.mb-4.box-shadow.h-100(style="opacity: 0.4")
+                      .card-body
+                        h5.card-title
+                          | WIP
+                        p.card-text
+                          | More personal projects to come!
+                        .d-flex.justify-content-between.align-items-center
+                          .btn-group
+                            a.btn.btn-sm.btn-outline-secondary(href="#") View
+                            a.btn.btn-sm.btn-outline-secondary(href="#") GitHub
+                          small.text-muted Coming Soon!
+                hr
+          .carousel-item
+            .album.py-5
+              h3.text-center Professional Projects
+              hr
+              .container
+                .row
+                  .col-md-4
+                    .card.mb-4.box-shadow.h-100
+                      .card-body
+                        h5.card-title
+                          | InvenioRDM DOI Enhancements
+                        h6.card-subtitle.mb-2.text-muted
+                          | Brookhaven National Laboratory
+                        p.card-text
+                          | Added new extension features to InvenioRDM, an upcoming "digital repository" project used to store data related to scientific research. Designed and built new web UI and functionality for feature based around obtaining unique identifiers for uploaded records.
+                        .d-flex.justify-content-between.align-items-center
+                          small.text-muted June-August 2020
+                  .col-md-4
+                    .card.mb-4.box-shadow.h-100
+                      .card-body
+                        h5.card-title
+                          | SAM Test Monitoring
+                        h6.card-subtitle.mb-2.text-muted
+                          | Brookhaven National Laboratory
+                        p.card-text
+                          | Created Python program to automate testing for a large processor allocation system. Script routinely submitted test jobs to system and alerted project manager if jobs failed or timed out, storing test results in MySQL database.
+                        .d-flex.justify-content-between.align-items-center
+                          small.text-muted July-August 2020
+                  .col-md-4
+                    .card.mb-4.box-shadow.h-100
+                      .card-body
+                        h5.card-title
+                          | FAST CARS
+                        h6.card-subtitle.mb-2.text-muted
+                          | The Kroger Company
+                        p.card-text
+                          | Performed various UI improvements and backend maintenance for two internal web applications related to capital requests and in-store temperature monitoring. Worked with Agile development team and participated in related activities.
+                        .d-flex.justify-content-between.align-items-center
+                          small.text-muted May-August 2019
+          .carousel-item
+            .album.py-5
+              h3.text-center Academic Projects
+              hr
+              .container
+                .row
+                  .col-md-4
+                    .card.mb-4.box-shadow.h-100
+                      .card-body
+                        h5.card-title
+                          | Class Scheduling Web App
+                        h6.card-subtitle.mb-2.text-muted
+                          | Project: Web Applications
+                        p.card-text
+                          | Built fully-featured web application and database for class scheduling and assignment using Ruby on Rails and PostgreSQL.
+                        .d-flex.justify-content-between.align-items-center
+                          small.text-muted March-May 2020
+                  .col-md-4
+                    .card.mb-4.box-shadow.h-100
+                      .card-body
+                        h5.card-title
+                          | System Call Malware Detection Project
+                        h6.card-subtitle.mb-2.text-muted
+                          | Introduction to Operating Systems
+                        p.card-text
+                          | Created project in C and Java to extract Linux system calls from a process and determine the likelihood that it is malware. Evaluated system calls by training K-Nearest-Neighbors algorithm on data from known malware, resulting in 96% detection accuracy.
+                        .d-flex.justify-content-between.align-items-center
+                          small.text-muted March-April 2020
+                  .col-md-4
+                    .card.mb-4.box-shadow.h-100
+                      .card-body
+                        h5.card-title
+                          | 2018 FEH Honors Robot Competition
+                        h6.card-subtitle.mb-2.text-muted
+                          | Fundamentals of Engineering for Honors II
+                        p.card-text
+                          | Led, organized, and developed C++ code for a team of engineering students to create a robot capable of completing tasks in a series of head-to-head competitions. Awarded first-place design prize for creation of robot almost entirely from wood.
+                        .d-flex.justify-content-between.align-items-center
+                          small.text-muted February-April 2018
+                hr
+        a.carousel-control-prev(href='#projectsCarousel' role='button' data-slide='prev')
+          span.carousel-control-prev-icon(aria-hidden='true')
+          span.sr-only Previous
+        a.carousel-control-next(href='#projectsCarousel' role='button' data-slide='next')
+          span.carousel-control-next-icon(aria-hidden='true')
+          span.sr-only Next
+
     footer.container
       p Built using #[a(href="https://nodejs.org/en/") Node.js], #[a(href="https://expressjs.com/") Express], #[a(href="https://jade-lang.com/") Jade], and #[a(href="https://getbootstrap.com/") Bootstrap].
       p © Cole Swartz 2020
