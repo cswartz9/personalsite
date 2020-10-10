@@ -34,14 +34,45 @@ html(lang='en')
         .container
           h1.jumbotron-heading Contact Me
           p.lead.text-muted
-            | All this form does is send me an email, but if you want to go through it instead of sending that email directly yourself, that's your prerogative.
+            | This page is under construction. In the meantime, I'll be happy to receive any messages directed to the following email address.
+          p.lead.text-muted
+            svg.bi.bi-envelope-fill(width='1em' height='1em' viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg')
+              path(fill-rule='evenodd' d='M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z')
+              #[a( href="mailto: cswartz9@gmail.com") cswartz9@gmail.com]
       .container
         .row
           .col-md-2
           .col-md-8
-            h2 Test
+            form#contact-form(method='post' action='contact.php' role='form')
+              .messages
+              .controls
+                .row
+                  .col-md-6
+                    .form-group
+                      label(for='form_name') First Name *
+                      input#form_name.form-control(type='text' name='name' placeholder='first name' required='required' data-error='First name is required.' disabled)
+                      .help-block.with-errors
+                  .col-md-6
+                    .form-group
+                      label(for='form_lastname') Last Name *
+                      input#form_lastname.form-control(type='text' name='surname' placeholder='last name' required='required' data-error='Last name is required.' disabled)
+                      .help-block.with-errors
+                .row
+                  .col-md-6
+                    .form-group
+                      label(for='form_email') Email *
+                      input#form_email.form-control(type='email' name='email' placeholder='email' required='required' data-error='Valid email address is required.' disabled)
+                      .help-block.with-errors
+                  .col-md-6
+                .row
+                  .col-md-12
+                    .form-group
+                      label(for='form_message') Message *
+                      textarea#form_message.form-control(name='message' placeholder='message' rows='4' required='required' data-error='Message is required.' disabled)
+                      .help-block.with-errors
+                  .col-md-12
+                    input.btn.btn-success.btn-send(type='submit' value='Submit' disabled)
           .col-md-2
-
       hr
     footer.container
       p Built using #[a(href="https://nodejs.org/en/") Node.js], #[a(href="https://expressjs.com/") Express], #[a(href="https://jade-lang.com/") Jade], and #[a(href="https://getbootstrap.com/") Bootstrap].
