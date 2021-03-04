@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var fs = require('fs')
 var https = require('https')
+var httpsRedirect = require('express-https-redirect');
 
 var contactRouter = require("./routes/contact");
 var indexRouter = require('./routes/index');
@@ -13,6 +14,7 @@ var projectsRouter = require("./routes/projects");
 var resumeRouter = require("./routes/resume");
 
 var app = express();
+app.use('/', httpsRedirect());
 const port = 3000;
 
 // view engine setup
@@ -32,7 +34,7 @@ app.use('/resume', resumeRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  next(createError(404));
+	next(createError(404));
 });
 
 // error handler
@@ -59,6 +61,10 @@ const credentials = {
 
 https.createServer(credentials, app).listen(port, () => {
   console.log(`Example app listening at https://localhost:${port}`)
-})
+});
+
+app.listen(3001, () => {
+  console.log('Example app listening at http:localhost:${3001}');
+});
 
 module.exports = app;
