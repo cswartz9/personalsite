@@ -46,11 +46,12 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-https.createServer(
-  {key: fs.readFileSync('server.key'),
-  cert: fs.readFileSync('server.cert')},
-  app
-).listen(port, () => {
+//https.createServer(
+//  {key: fs.readFileSync('server.key'),
+//  cert: fs.readFileSync('server.cert')},
+//  app
+//)
+app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
 
