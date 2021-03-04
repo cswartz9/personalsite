@@ -4,6 +4,9 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+var fs = require('fs')
+var https = require('https')
+
 var contactRouter = require("./routes/contact");
 var indexRouter = require('./routes/index');
 var projectsRouter = require("./routes/projects");
@@ -43,7 +46,11 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-app.listen(port, () => {
+https.createServer(
+  {key: fs.readFileSync('server.key'),
+  cert: fs.readFileSync('server.cert')},
+  app
+).listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
 
