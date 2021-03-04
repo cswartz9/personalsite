@@ -46,12 +46,19 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-https.createServer(
-  {key: fs.readFileSync('server.key'),
-  cert: fs.readFileSync('server.cert')},
-  app
-).listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+
+const privateKey = fs.readFileSync('/etc/letsencrypt/live/coleswartz.com/privkey.pem', 'utf8');
+const certificate = fs.readFileSync('/etc/letsencrypt/live/coleswartz.com/cert.pem', 'utf8');
+const ca = fs.readFileSync('/etc/letsencrypt/live/coleswartz.com/chain.pem', 'utf8');
+
+const credentials = {
+        key: privateKey,
+	cert: certificate,
+	ca: ca
+};
+
+https.createServer(credentials, app).listen(port, () => {
+  console.log(`Example app listening at https://localhost:${port}`)
 })
 
 module.exports = app;
