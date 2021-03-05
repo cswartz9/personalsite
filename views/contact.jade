@@ -34,7 +34,7 @@ html(lang='en')
         .container
           h1.jumbotron-heading Contact Me
           p.lead.text-muted
-            | This page is under construction. In the meantime, I'll be happy to receive any messages directed to the following email address.
+            | Professional inquiries only, please. Alternatively, contact me directly at the following email address.
           p.lead.text-muted
             svg.bi.bi-envelope-fill(width='1em' height='1em' viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg')
               path(fill-rule='evenodd' d='M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z')
@@ -43,35 +43,35 @@ html(lang='en')
         .row
           .col-md-2
           .col-md-8
-            form#contact-form(method='post' action='contact.php' role='form')
+            form#contact-form(method='post' action='/contact' id='contact-form' role='form')
               .messages
               .controls
                 .row
                   .col-md-6
                     .form-group
-                      label(for='form_name') First Name *
-                      input#form_name.form-control(type='text' name='name' placeholder='first name' required='required' data-error='First name is required.' disabled)
+                      label(for='firstname') First Name *
+                      input#form_name.form-control(type='text' name='firstname' placeholder='first name' required='required' data-error='First name is required.')
                       .help-block.with-errors
                   .col-md-6
                     .form-group
-                      label(for='form_lastname') Last Name *
-                      input#form_lastname.form-control(type='text' name='surname' placeholder='last name' required='required' data-error='Last name is required.' disabled)
+                      label(for='lastname') Last Name *
+                      input#form_lastname.form-control(type='text' name='lastname' placeholder='last name' required='required' data-error='Last name is required.')
                       .help-block.with-errors
                 .row
                   .col-md-6
                     .form-group
-                      label(for='form_email') Email *
-                      input#form_email.form-control(type='email' name='email' placeholder='email' required='required' data-error='Valid email address is required.' disabled)
+                      label(for='email') Email *
+                      input#form_email.form-control(type='email' name='email' placeholder='email' required='required' data-error='Valid email address is required.')
                       .help-block.with-errors
                   .col-md-6
                 .row
                   .col-md-12
                     .form-group
-                      label(for='form_message') Message *
-                      textarea#form_message.form-control(name='message' placeholder='message' rows='4' required='required' data-error='Message is required.' disabled)
+                      label(for='message') Message *
+                      textarea#form_message.form-control(name='message' placeholder='message' rows='4' required='required' data-error='Message is required.')
                       .help-block.with-errors
                   .col-md-12
-                    input.btn.btn-success.btn-send(type='submit' value='Submit' disabled)
+                    input.btn.btn-success.btn-send(type='submit' value='Submit')
           .col-md-2
       hr
     footer.container

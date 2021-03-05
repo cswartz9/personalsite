@@ -7,6 +7,9 @@ var logger = require('morgan');
 var fs = require('fs')
 var https = require('https')
 var httpsRedirect = require('express-https-redirect');
+var nodemailer = require('nodemailer');
+var bodyParser = require('body-parser');
+var dotenv = require('dotenv').config();
 
 var contactRouter = require("./routes/contact");
 var indexRouter = require('./routes/index');
@@ -15,6 +18,7 @@ var resumeRouter = require("./routes/resume");
 
 var app = express();
 app.use('/', httpsRedirect());
+app.use(bodyParser.urlencoded({extended: true}));
 const port = 3000;
 
 // view engine setup
